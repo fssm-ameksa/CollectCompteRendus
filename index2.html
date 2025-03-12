@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FSSM AMEKSA</title>
+</head>
+
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="sidebar">
+            <div>
+                <h2>Compte Rendu </h2>
+                <div id="countdown" class="timer">20:00</div>
+                <div class="instructions">
+                    <p>🎯 Upploadez votre solution sous format d'un documment 🚀</p>
+                    <p>🎯 Votre solution doit être claire et bien structurée 🚀</p>
+                    <p>🎯 Votre solution doit être bien commentée 🚀</p>
+                </div>
+            </div>
+            <div>
+                <img src="logoAm.png" alt="">
+                <p>&copy; 2025 Pr. Mohammed AMEKSA</p>
+            </div>
+        </div>
+        <!-- Main Content: Google Form -->
+        <div class="main-content" id="formContainer">
+            <div class="instructions" style="text-align:center;">
+                <h1>Bienvenue </h1>
+                <h2>FSSM- Marrakech - 2024/2025</h2>
+                <p>Veuillez cliquer sur le bouton ci-dessous pour commençer</p>
+                <button class="button" id="fullscreenBtn">Start Quiz</button>
+            </h2>
+        </div>
+    </div>
+
+    <script>
+       function requestFullscreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+
+
+        function displayExam() {
+           var htmlCode = '<iframe id="examFrame" class="iframe-container" src="https://docs.google.com/forms/d/e/1FAIpQLSc_VCo3z7_h57t51Zb2v7I4DhE5cdSliDzBjippGPn5LKLdNw/viewform?embedded=true"></iframe>';
+            var element = document.getElementById('formContainer');
+            element.innerHTML = htmlCode;
+        }
+
+        btn = document.getElementById('fullscreenBtn');
+        btn.addEventListener("click", requestFullscreen);
+        btn.addEventListener("click", displayExam);
+    </script>
+</body>
+
+</html>
